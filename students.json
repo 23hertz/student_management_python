@@ -8,5 +8,10 @@
         "name": "ola update",
         "gender": "male",
         "course": "english"
+    },
+    {
+        "name": "ola",
+        "gender": "Male",
+        "course": "Math"
     }
 ]

@@ -6,10 +6,121 @@ class Students:
 
         def get_input(self):
             get_name = input("Enter student name: ")
+            if not get_name.strip():
+                print("Name cannot be empty. Please try again.")
+                return self.get_input()
+            elif any(char.isdigit() for char in get_name):
+                print("Name cannot contain numbers. Please try again.")
+                return self.get_input()
+            elif any(not char.isalpha() and not char.isspace() for char in get_name):
+                print("Name cannot contain special characters. Please try again.")
+                return self.get_input()
+            elif len(get_name) < 2:
+                print("Name must be at least 2 characters long. Please try again.")
+                return self.get_input() 
+            elif len(get_name) > 50:
+                print("Name cannot be longer than 50 characters. Please try again.")
+                return self.get_input()
+            elif get_name.isspace():
+                print("Name cannot be just whitespace. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["admin", "root", "superuser"]:
+                print("Name cannot be a reserved word. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["null", "undefined", "none"]:
+                print("Name cannot be a null value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["test", "testing"]:
+                print("Name cannot be a test value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["example", "sample"]:
+                print("Name cannot be an example value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["unknown", "anonymous"]:
+                print("Name cannot be an unknown value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["default", "placeholder"]:
+                print("Name cannot be a default value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["user", "username"]:
+                print("Name cannot be a generic user value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["guest", "visitor"]:
+                print("Name cannot be a guest value. Please try again.")
+                return self.get_input()
+            elif get_name.lower() in ["admin", "administrator"]:
+                print("Name cannot be an administrator value. Please try again.")
+                return self.get_input() 
+          
             get_gender = input("Enter student gender: ")
-            get_course = input("Enter student course: ")
+            if not get_gender.strip():
+                print("Gender cannot be empty. Please try again.")
+                return self.get_input() 
+            elif get_gender.lower() not in ["male", "female"]:
+                print("Gender must be 'male' or 'female '. Please try again.")
+                return self.get_input()     
+            elif get_gender.isspace():
+                print("Gender cannot be just whitespace. Please try again.")
+                return self.get_input() 
+            elif get_gender.lower() in ["unknown", "unspecified"]:
+                print("Gender cannot be an unknown value. Please try again.")
+                return self.get_input() 
+            elif get_gender.lower() in ["other", "non-binary"]:
+                print("Gender cannot be a non-binary value. Please try again.")
+                return self.get_input() 
+          
 
-            
+            get_course = input("Enter student course: ")
+            if not get_course.strip():
+                print("Course cannot be empty. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() not in ["english", "math", "science", "history", "art"]:
+                print("Course must be one of the following: English, Math, Science, History, Art. Please try again.")
+                return self.get_input()
+            elif any(char.isdigit() for char in get_course):
+                print("Course cannot contain numbers. Please try again.")
+                return self.get_input() 
+            elif any(not char.isalpha() and not char.isspace() for char in get_course):
+                print("Course cannot contain special characters. Please try again.")
+                return self.get_input() 
+            elif len(get_course) < 2:
+                print("Course must be at least 2 characters long. Please try again.")
+                return self.get_input() 
+            elif len(get_course) > 50:
+                print("Course cannot be longer than 50 characters. Please try again.")
+                return self.get_input() 
+            elif get_course.isspace():
+                print("Course cannot be just whitespace. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["admin", "root", "superuser"]:
+                print("Course cannot be a reserved word. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["null", "undefined", "none"]:
+                print("Course cannot be a null value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["test", "testing"]:
+                print("Course cannot be a test value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["example", "sample"]:
+                print("Course cannot be an example value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["unknown", "anonymous"]:
+                print("Course cannot be an unknown value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["default", "placeholder"]:
+                print("Course cannot be a default value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["user", "username"]:
+                print("Course cannot be a generic user value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["guest", "visitor"]:
+                print("Course cannot be a guest value. Please try again.")
+                return self.get_input() 
+            elif get_course.lower() in ["admin", "administrator"]:
+                print("Course cannot be an administrator value. Please try again")
+                return self.get_input()
+       
+
             student_data = {
                 "name": get_name,
                 "gender": get_gender,

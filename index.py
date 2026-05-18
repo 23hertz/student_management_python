@@ -2,8 +2,6 @@ from manage import Manage
 
 class Index:
     def __init__(self):
-        pass
-
         self.manage = Manage()
 
     def select_option(self):
@@ -18,17 +16,14 @@ class Index:
                choice = input("Enter your choice: ")
 
                if choice == '1':
-                   print("You selected Student Management.")
-                   self.manage.student_management()
+                    self.manage.get_students_menu()
 
                elif choice == '2':
-                   print("You selected Course Management.")
-                   self.manage.course_management()
+                    self.manage.get_course_management()
 
                elif choice == '3':
                     print("Exiting the program. Goodbye!")
                     break
-               
                else:
                      print("Invalid choice. Please try again.")        
 

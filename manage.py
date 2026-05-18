@@ -1,38 +1,42 @@
-from students import Students   
-
+# from students import Students   
+from student_management import Student_management
+from course_management import Course_management
 class Manage:
     def __init__(self):
-        self.student = Students()
+        self.student = Student_management()
+        self.course = Course_management()
 
-    def select_option(self):
-            print("\nStudent Management System")
-            print("1. Add Student")
-            print("2. View Students")
-            print("3. Update Student")
-            print("4. Delete Student")
-            print("5. Back to Main Menu")
+    def get_students_menu(self):                                 
+        self.student.students_menu()
+
+    def get_course_management(self):
+        self.course.course_menu()
     
-    def student_management(self):
-         while True:
-            self.select_option()
-            choice = input("Enter your choice: ")
+  
 
-            if choice == '1':
-                self.student.add_student()
-            elif choice == '2':
-                self.student.view_student()
-            elif choice == '3':
-                self.student.update_student()
-            elif choice == '4':
-                self.student.delete_student()
-            elif choice == '5':
-                print("Returning to Main Menu...")
-                break
-            else:
-                print("Invalid choice. Please try again.")    
+
+
+
+
 
     
-    def course_management(self):
-        print("Running course management system...")
+    # def course_management(self):
+    #     while True:        
+    #       self.course.course_option()
+    #       print("Running course management system...")
+          
+    #       course_options = int(input('Select course activities'))
+
+    #       if course_options == '1':
+    #           self.course.view_courses()
+    #       elif course_options == '2':
+    #           self.course.add_course()
+    #       else:
+    #           print("Wrong")
+              
+              
+              
+              
+              
     
 
